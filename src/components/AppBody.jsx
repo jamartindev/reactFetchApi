@@ -86,7 +86,7 @@ export default function AppBody() {
     console.log("Component mounted");
     async function fetchChars() {
       try {
-        const response = await fetch("jamartindev/reactFetchApi/data/characters.json");
+        const response = await fetch("/data/characters.json");
         if (response.ok) {
           console.log("Promise resolved and HTTP status is ok");
           const data = await response.json();
