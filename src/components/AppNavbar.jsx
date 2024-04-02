@@ -8,7 +8,7 @@ import "../styles/Nav.css"; // Importing the Nav.css file for styling
 function Logo() {
   return (
     <a className="logo">
-      <img src="/assets/jujuLogo.svg" alt="Jujutsu Kaisen Logo" />
+      <img src="/reactFetchApi/assets/jujuLogo.svg" alt="Jujutsu Kaisen Logo" />
     </a>
   );
 }
@@ -22,7 +22,7 @@ function ThemeToggle({ onToggleTheme }) {
         alt={`${
           theme === "light" ? "Dark" : "Light"
         } Mode`}
-        src={`${theme === "light" ? "/assets/theme_dark.svg" : "/assets/theme_light.svg"}`}
+        src={`${theme === "light" ? "/reactFetchApi/assets/theme_dark.svg" : "/reactFetchApi/assets/theme_light.svg"}`}
       />
     </a>
   );
