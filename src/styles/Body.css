@@ -1,0 +1,80 @@
+/* Reset default values and apply border box for better resizing. Apply general font style and color */
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex; /* Use flexbox for layout */
+  overflow-x: auto; /* Allow horizontal scrolling */
+  border: 1px solid #ccc; /* Add a border around the container */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1); /* Add a box shadow for a subtle effect */
+  width: 70%; /* Set the width of the container */
+  margin: 5vh auto; /* Set margin to center the container vertically and horizontally */
+  align-items: flex-start; /* Align items to the start of the cross axis */
+  position: relative; /* Set position to relative */
+}
+
+.item {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange items in a column */
+  height: auto; /* Allow height to adjust based on content */
+  width: 50%; /* Set the width of the item */
+  margin: 5vh 1%; /* Set margin around the item */
+  justify-content: flex-start; /* Align items to the start of the main axis */
+  flex-grow: 1; /* Allow items to grow to fill available space */
+}
+
+.item:first-child,
+.item:last-child {
+  width: 10%; /* Set the width of the first and last items */
+  height: 10%; /* Set the height of the first and last items */
+  margin: auto; /* Center the first and last items horizontally */
+  padding: 2vh; /* Add padding to the first and last items */
+}
+
+.item p,
+h4 {
+  margin-bottom: 1em; /* Add margin below paragraphs and headings */
+  text-align: justify; /* Justify text for better readability */
+}
+
+.prev-button, .next-button {
+  background-color: #750e53c0; /* Set the background color of the previous button */
+  border-radius: 0.1rem; /* Set border radius for rounded corners */
+  border-color: #750e53c0; /* Set border color */
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    height: 100%; /* Set height to 100% */
+    width: 100%; /* Set width to 100% */
+    flex-direction: column; /* Arrange items in a column */
+    border: none; /* Remove border */
+  }
+
+  .item:not(:first-child),
+  .item:not(:last-child) {
+    height: auto; /* Allow height to adjust based on content */
+    width: 90%; /* Set the width of items to 90% */
+    margin: 5vh auto; /* Set margin to center items vertically and horizontally */
+  }
+
+  .prev-button, .next-button {
+    height: 10%; /* Set the height of the previous button */
+    position: fixed; /* Position the button fixed */
+    top: 50%; /* Align the button to the middle vertically */
+    transform: translateY(-50%); /* Move the button up by 50% of its height */
+    z-index: 999; /* Set a high z-index to ensure it's above other elements */
+  }
+
+  .prev-button {
+    left: 0; /* Align the button to the left */
+  }
+
+  .next-button {
+    right: 0; /* Align the button to the right */
+  }
+}

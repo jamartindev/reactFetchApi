@@ -1,0 +1,92 @@
+
+
+/* Navbar styles */
+
+.nav-bar {
+  background-color: #750e53c0; /* Navbar background color */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.nav-bar a {
+  float: right; /* Align links to the right */
+  display: block; /* Display links as block elements */
+  color: #f2f2f2; /* Text color for links */
+  text-align: center; /* Center-align text */
+  padding: 1.4vh 1.6vh; /* Padding for links */
+  text-decoration: none; /* Remove underline from links */
+  font-size: 17px; /* Font size for links */
+  margin-top: 7px; /* Top margin for links */
+}
+
+/* Style for hover effect on links, excluding the first and second children */
+.nav-bar a:not(:first-child,:nth-child(2)):hover {
+  color: black; /* Change text color on hover */
+}
+
+.logo {
+  float: left; /* Align logo to the left */
+  display: block; /* Display logo as a block element */
+  position: absolute; /* Position logo absolutely */
+}
+
+.logo img {
+  width: auto; /* Set image width to auto */
+  height: 10vh; /* Set image height */
+  margin-top: -4vh; /* Adjust top margin */
+}
+
+.btnDarkMode {
+  background-color: transparent; /* Set background color to transparent for dark mode button */
+  border: none; /* Remove border from button */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.btnDarkMode img {
+  height: 4vh; /* Set height of dark mode button icon */
+  margin-top: -1vh; /* Adjust top margin */
+}
+
+.nav-bar .icon {
+  display: none; /* Hide icon by default */
+}
+
+@media screen and (max-width: 600px) {
+  /* Media query for smaller devices */
+
+  .nav-bar a:not(:first-child) {
+    display: none; /* Hide links except the first one on small screens */
+  }
+
+  .nav-bar a.icon {
+    float: right; /* Align icon to the right */
+    display: block; /* Display icon as a block element */
+    margin-top: -0.5vh; /* Adjust top margin */
+  }
+
+  .nav-bar.responsive {
+    position: relative; /* Change position to relative for responsive navbar */
+  }
+
+  .nav-bar.responsive a.icon {
+    position: absolute; /* Position icon absolutely */
+    right: 0; /* Align icon to the right */
+    top: 0; /* Align icon to the top */
+  }
+
+  .nav-bar.responsive a:not(:first-child,:last-child) {
+    float: none; /* Remove float for links */
+    display: block; /* Display links as block elements */
+    text-align: left; /* Left-align text */
+    position: sticky; /* Make links sticky */
+    top: 7vh; /* Set top position */
+  }
+
+  .btnDarkMode {
+    margin: 3vh 0 6vh -0.5vh; /* Adjust margin for dark mode button */
+  }
+
+  .logo img {
+    margin-top: -4vh; /* Adjust top margin for logo */
+    height: 8.5vh; /* Adjust height of logo */
+  }
+}
