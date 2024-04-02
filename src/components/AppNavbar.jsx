@@ -22,7 +22,7 @@ function ThemeToggle({ onToggleTheme }) {
         alt={`${
           theme === "light" ? "Dark" : "Light"
         } Mode`}
-        src={`${theme === "light" ? "./reactFetchApi/assets/theme_dark.svg" : "./reactFetchApi/assets/theme_light.svg"}`}
+        src={`${theme === "light" ? "/reactFetchApi/assets/theme_dark.svg" : "/reactFetchApi/assets/theme_light.svg"}`}
       />
     </a>
   );
