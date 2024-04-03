@@ -40,7 +40,7 @@ function CharacterDescription({ character }) {
     <div>
       <h4>Description:</h4>{" "}
       {character.appearance != null ? (
-          formatContent(character.abilities).map((contentFormatted, index) => (
+          formatContent(character.appearance).map((contentFormatted, index) => (
             <p key={index}>{contentFormatted}</p>
           ))
       ) : (
