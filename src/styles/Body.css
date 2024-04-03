@@ -6,26 +6,48 @@
   padding: 0;
 }
 
+:root {
+  --nav-btn-color: #750e53c0;
+  --text: rgb(247, 237, 237);
+}
+
 .container {
   display: flex; /* Use flexbox for layout */
-  overflow-x: auto; /* Allow horizontal scrolling */
+  overflow: hidden; /* Hide content surpassing the parent div limits */
   border: 1px solid #ccc; /* Add a border around the container */
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1); /* Add a box shadow for a subtle effect */
   width: 70%; /* Set the width of the container */
   margin: 5vh auto; /* Set margin to center the container vertically and horizontally */
   align-items: flex-start; /* Align items to the start of the cross axis */
   position: relative; /* Set position to relative */
+  height: 80vh;
 }
 
 .item {
   display: flex; /* Use flexbox for layout */
   flex-direction: column; /* Arrange items in a column */
-  height: auto; /* Allow height to adjust based on content */
+  height: 100%;
+  max-height: 70vh;
   width: 50%; /* Set the width of the item */
   margin: 5vh 1%; /* Set margin around the item */
   justify-content: flex-start; /* Align items to the start of the main axis */
   flex-grow: 1; /* Allow items to grow to fill available space */
+  padding: 0 1rem;
 }
+
+.item img {
+  max-height: inherit;
+}
+
+.item:nth-child(3) {
+  overflow-x: auto;
+}
+
+.item::-webkit-scrollbar {
+  width:5px;
+  background-color:#000;
+}
+
 
 .item:first-child,
 .item:last-child {
@@ -41,10 +63,16 @@ h4 {
   text-align: justify; /* Justify text for better readability */
 }
 
+.item h4 {
+  background-color: var(--nav-btn-color);
+  color: var(--text);
+  padding: 0.1em;
+}
+
 .prev-button, .next-button {
-  background-color: #750e53c0; /* Set the background color of the previous button */
+  background-color: var(--nav-btn-color); /* Set the background color of the previous button */
   border-radius: 0.1rem; /* Set border radius for rounded corners */
-  border-color: #750e53c0; /* Set border color */
+  border-color: var(--nav-btn-color); /* Set border color */
 }
 
 @media screen and (max-width: 600px) {

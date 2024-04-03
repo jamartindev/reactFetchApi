@@ -22,37 +22,35 @@ function CharacterInfo({ character }) {
   );
 }
 
-// CharacterDescription component
+// CharacterDescription component - Formats text fetched from a json file
 function CharacterDescription({ character }) {
-  const limitContent = (content, limit) => {
-    const words = content.split(" ");
-    if (words.length > limit) {
-      let newContent = words.slice(0, limit);
-      if (newContent[limit - 1].indexOf(".") > -1) {
-        return newContent.join(" ");
-      } else {
-        while (true) {
-          newContent.pop();
-          if (newContent[newContent.length - 1].indexOf(".") > -1) {
-            return newContent.join(" ") + "...";
-          }
-        }
-      }
+  const formatContent = (content) => {
+    const words = content.split(".");
+   const formatted = [];
+    for (let i = 0; i < words.length; i+=3) {
+      let word = words.slice(i, i + 3).join(". ");
+      formatted.push(word);
     }
-    return content;
+    
+    return formatted;
   };
+
 
   return (
     <div>
       <h4>Description:</h4>{" "}
       {character.appearance != null ? (
-        <p>{limitContent(character.appearance, 100)}</p>
+          formatContent(character.abilities).map((contentFormatted, index) => (
+            <p key={index}>{contentFormatted}</p>
+          ))
       ) : (
         ""
       )}
       <h4>Abilities:</h4>{" "}
       {character.abilities != null ? (
-        <p>{limitContent(character.abilities, 100)}</p>
+          formatContent(character.abilities).map((contentFormatted, index) => (
+            <p key={index}>{contentFormatted}</p>
+          ))
       ) : (
         ""
       )}

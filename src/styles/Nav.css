@@ -3,14 +3,14 @@
 /* Navbar styles */
 
 .nav-bar {
-  background-color: #750e53c0; /* Navbar background color */
+  background-color: var(--nav-btn-color); /* Navbar background color */
   overflow: hidden; /* Hide overflowing content */
 }
 
 .nav-bar a {
   float: right; /* Align links to the right */
   display: block; /* Display links as block elements */
-  color: #f2f2f2; /* Text color for links */
+  color: var(--text); /* Text color for links */
   text-align: center; /* Center-align text */
   padding: 1.4vh 1.6vh; /* Padding for links */
   text-decoration: none; /* Remove underline from links */
